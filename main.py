@@ -46,5 +46,18 @@ def listaPares(limit : Optional [int] = 20):
        "pares" : pares
    }
 
+@app.get("/quadrados")
+def quadrados(max : Optional [int] = 20):
+   quadrados = []
+   for i in range(1, max+1, 2):
+       quadrados.append(i)
+
+   return {
+       "data" : {
+           "max" : max,
+           "quadrados" : quadrados
+       }
+   }
+
 
 
